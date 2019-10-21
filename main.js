@@ -1,55 +1,50 @@
 const square = document.querySelectorAll('.square');
-const filler = document.querySelector('.filler')
-
-filler.style.background = 'red';
+const filler = document.querySelector('.filler');
+var count = true;
+// console.log(getComputedStyle(filler).backgroundColor);
 for (let i = 0; i < square.length; i++) {
-
-    if(filler.style.background === 'red') {
-        filler.style.background = 'blue';
         
         square[i].addEventListener('click', function(e) {
             e.preventDefault();
 
-            square[i].classList.toggle("filler"); 
-            check();
-        })
-    } else if(filler.style.background === 'blue') {
-        filler.style.background = 'red'
-        
-        square[i].addEventListener('click', function(e) {
-            e.preventDefault();
+            if(count === true) {
 
-            
-            square[i].classList.toggle("filler");
-            check();
+                square[i].classList.add("red");
+                check("red");
+            } else if (count === false) {
+
+                square[i].classList.add("blue");
+                check("blue");
+            }
+            count = !count;
         })
     }
-}
 
-function check() {
-    if (square[0].style.background === square[3].style.bakground &&
-        square[3].style.background === square[6].style.background) {
+function check(color) {
+    
+    if (square[0].classList.contains(color) === square[3].classList.contains(color) &&
+        square[3].classList.contains(color) === square[6].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[1].style.background === square[4].style.bakground &&
-        square[4].style.background === square[7].style.background) {
+    } else if (square[1].classList.contains(color) === square[4].classList.contains(color) &&
+        square[4].classList.contains(color) === square[7].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[2].style.background === square[5].style.bakground &&
-        square[5].style.background === square[8].style.background) {
+    } else if (square[2].classList.contains(color) === square[5].classList.contains(color) &&
+        square[5].classList.contains(color) === square[8].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[0].style.background === square[1].style.bakground &&
-        square[1].style.background === square[2].style.background) {
+    } else if (square[0].classList.contains(color) === square[1].classList.contains(color) &&
+        square[1].classList.contains(color) === square[2].classList.contains(color)) {
             console.log("Winner");
-    } else if (square[3].style.background === square[4].style.bakground &&
-        square[4].style.background === square[5].style.background) {
+    } else if (square[3].classList.contains(color) === square[4].classList.contains(color) &&
+        square[4].classList.contains(color) === square[5].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[6].style.background === square[7].style.bakground &&
-        square[7].style.background === square[8].style.background) {
+    } else if (square[6].classList.contains(color) === square[7].classList.contains(color) &&
+        square[7].classList.contains(color) === square[8].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[0].style.background === square[4].style.bakground &&
-        square[4].style.background === square[8].style.background) {
+    } else if (square[0].classList.contains(color) === square[4].classList.contains(color) &&
+        square[4].classList.contains(color) === square[8].classList.contains(color)) {
             console.log("Winner!");
-    } else if (square[2].style.background === square[4].style.bakground &&
-        square[4].style.background === square[5].style.background) {
+    } else if (square[2].classList.contains(color) === square[4].classList.contains(color) &&
+        square[4].classList.contains(color) === square[5].classList.contains(color)) {
             console.log("Winner!");
     }
 }

@@ -4,10 +4,6 @@ body {
     margin: 20px;
 }
 
-.hide {
-    display: none;
-}
-
 .board {
     display: grid;
     grid-template-columns: 200px 200px 200px;
@@ -20,6 +16,10 @@ body {
     border: solid black;
 }
 
-.filler {
+.red {
     background: red;
+}
+
+.blue {
+    background: blue;
 }
