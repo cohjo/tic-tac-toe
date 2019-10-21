@@ -4,6 +4,10 @@ body {
     margin: 20px;
 }
 
+.hide {
+    display: none;
+}
+
 .board {
     display: grid;
     grid-template-columns: 200px 200px 200px;
@@ -12,6 +16,10 @@ body {
     justify-content: center;
 }
 
-#One, #Two, #Three, #Four, #Five, #Six, #Seven, #Eight, #Nine {
+.square {
     border: solid black;
+}
+
+.filler {
+    background: red;
 }
