@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+}
+
+#One, #Two, #Three, #Four, #Five, #Six, #Seven, #Eight, #Nine {
+    border: solid black;
+}
