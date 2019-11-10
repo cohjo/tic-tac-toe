@@ -1,11 +1,17 @@
 const square = document.querySelectorAll('.square');
 const filler = document.querySelector('.filler');
+const reset = document.querySelector('#reset');
 var count = true;
 var winner = false;
 
 for(let i = 0; i < square.length; i++) {
     square[i].classList.add("white");
 }
+
+// reset.addEventListener('click', function(e) {
+//     e.preventDefault;
+
+// })
 
 for (let i = 0; i < square.length; i++) {
         square[i].addEventListener('click', function(e) {
@@ -142,17 +148,16 @@ function check(color) {
         }
     }
     
-        let counter = 0;
-        for(let i = 0; i < square.length; i++) {
-            if (square[i].classList.contains(color)) {
-                if(color != "white") {
-                    counter++;
-                    console.log(counter);
-                }
+    let counter = 0;
+    for(let i = 0; i < square.length; i++) {
+        if (square[i].classList.contains(color)) {
+            if(color != "white") {
+                counter++;
+                console.log(counter);
             }
         }
-        if(counter === 5) {
-            alert("It's a tie!");
-        }
-    
+    }
+    if(counter === 5) {
+        alert("It's a tie!");
+    }
 }

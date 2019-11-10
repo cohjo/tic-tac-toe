@@ -27,3 +27,10 @@ body {
 .white {
     background: white;
 }
+
+#reset {
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: white;
+}
